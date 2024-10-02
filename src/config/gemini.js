@@ -1,4 +1,4 @@
-const APIKEY = "AIzaSyC2eVx-f4ReeWgSoZ162zi5OoRtBrmOzK8";
+const APIKEY = "";
 
 import {
 	GoogleGenerativeAI,
