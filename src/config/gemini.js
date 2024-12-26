@@ -5,6 +5,7 @@ import {
 	HarmCategory,
 	HarmBlockThreshold,
 } from "@google/generative-ai";
+import { marked } from "marked";
 
 const apiKey = APIKEY;
 const genAI = new GoogleGenerativeAI(apiKey);
@@ -30,8 +31,11 @@ async function runChat(prompt) {
 	});
 
 	const result = await chatSession.sendMessage(prompt);
-	console.log(result.response.text(), "helloworld");
-    return result.response.text()
+
+	const parsedResponse = marked(result.response.text());
+	console.log(parsedResponse, "helloworld");
+
+	return parsedResponse;
 }
 
 export default runChat;
